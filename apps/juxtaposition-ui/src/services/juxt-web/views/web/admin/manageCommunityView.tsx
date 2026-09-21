@@ -1,6 +1,6 @@
 import { WebRoot, WebWrapper } from '@/services/juxt-web/views/web/root';
 import { WebNavBar } from '@/services/juxt-web/views/web/navbar';
-import { WebAdminCenterItems, WebModerationTabs } from '@/services/juxt-web/views/web/admin/admin';
+import { WebAdminCenterItems, WebModerationHead, WebModerationTabs } from '@/services/juxt-web/views/web/admin/admin';
 import { useUrl } from '@/services/juxt-web/views/common/hooks/useUrl';
 import { WebSearchForm } from '@/services/juxt-web/views/web/components/ui/WebSearchForm';
 import { WebCommunityIcon } from '@/services/juxt-web/views/web/components/ui/WebCommunityIcon';
@@ -20,7 +20,7 @@ export function WebManageCommunityView(props: ManageCommunityViewProps): ReactNo
 	const nextUrl = url.url('/admin/communities', { page: props.page + 1, search: props.search });
 
 	return (
-		<WebRoot type="admin">
+		<WebRoot head={<WebModerationHead selected="communities"/>} type="admin">
 			<h2 id="title" className="page-header">
 				Manage Communities
 			</h2>

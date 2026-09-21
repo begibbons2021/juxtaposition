@@ -16,10 +16,10 @@ export type FatalErrorViewProps = {
 };
 
 export function WebErrorView(props: ErrorViewProps): ReactNode {
+	const title = `Juxt - ${T.str('error.title', { code: props.code })}`;
+	
 	const extraHead = (
-		<title>
-			{'Juxt - ' + T.str('error.title', { code: props.code })}
-		</title>
+		<title>{title}</title>
 	);
 
 	return (

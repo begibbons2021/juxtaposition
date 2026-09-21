@@ -23,7 +23,7 @@ export type PostPageViewProps = {
 function PostHead(props: PostPageViewProps): ReactNode {
 	const url = useUrl();
 	const post = props.post;
-	const pageTitle = T.str('post.title', { username: post.author.miiName });
+	const pageTitle = `Juxt - ${T.str('post.title', { username: post.author.miiName })}`;
 
 	if (post.moderation?.removed) {
 		return (

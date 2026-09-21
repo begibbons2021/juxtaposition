@@ -5,9 +5,19 @@ import { WebCommunityItem } from '@/services/juxt-web/views/web/communityListVie
 import type { ReactNode } from 'react';
 import type { SubCommunityViewProps } from '@/services/juxt-web/views/portal/subCommunityView';
 
+export function WebSubCommunityHead(props: SubCommunityViewProps): ReactNode {
+	const title = `Juxt - ${T.str('community.related_to', { community: props.community.name })}`;
+
+	return (
+		<>
+			<title>{title}</title>
+		</>
+	);
+}
+
 export function WebSubCommunityView(props: SubCommunityViewProps): ReactNode {
 	return (
-		<WebRoot>
+		<WebRoot head={<WebSubCommunityHead {...props}/>}>
 			<h2 id="title" className="page-header">
 				<T k="community.related_to" values={{ community: props.community.name }} />
 			</h2>

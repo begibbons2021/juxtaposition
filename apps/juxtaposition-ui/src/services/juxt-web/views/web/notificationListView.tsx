@@ -311,9 +311,21 @@ export function WebNotificationListItems(props: NotificationListItemsProps): Rea
 	);
 }
 
+export function WebNotificationHead(): ReactNode {
+	/* TODO: Consider adding the number of notifications to the page title using props*/
+	const name = T.str("global.notifications");
+	const title = `Juxt - ${name}`;
+
+	return (
+		<>
+			<title>{title}</title>
+		</>
+	);
+}
+
 export function WebNotificationWrapperView(props: NotificationWrapperViewProps): ReactNode {
 	return (
-		<WebRoot>
+		<WebRoot head={<WebNotificationHead/>}>
 			<h2 id="title" className="page-header">
 				<T k="global.notifications" />
 			</h2>

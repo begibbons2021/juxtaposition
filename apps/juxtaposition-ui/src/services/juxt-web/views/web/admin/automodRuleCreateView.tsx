@@ -26,9 +26,22 @@ export function WebAutomodRuleModeDropdown(props: DropdownProps): ReactNode {
 	);
 }
 
+export function WebAutomodRuleCreateHead(): ReactNode {
+	/* TODO: Create template string with this page's name?  */
+	const name = "New Automod Rule";
+
+	const title = `Juxt - ${name}`;
+	
+	return (
+		<>
+			<title>{title}</title>
+		</>
+	);
+}
+
 export function WebAutomodRuleCreateView(): ReactNode {
 	return (
-		<WebRoot type="admin">
+		<WebRoot head={<WebAutomodRuleCreateHead />} type="admin">
 			<h2 id="title" className="page-header">
 				New automod rule
 			</h2>

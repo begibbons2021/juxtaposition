@@ -60,6 +60,16 @@ export type NewPostViewProps = {
 	errorText?: string;
 };
 
+export function WebNewPostHead(props: NewPostViewProps): ReactNode {
+	const title = `Juxt - ${T.str('new_post.post_to', { user: props.name })}`;
+
+	return (
+		<>
+			<title>{title}</title>
+		</>
+	);
+}
+
 export function WebNewPostView(props: NewPostViewProps): ReactNode {
 	const url = useUrl();
 	const user = useUser();
@@ -127,7 +137,7 @@ export function WebNewPostPage(props: NewPostViewProps): ReactNode {
 	}
 
 	return (
-		<WebRoot>
+		<WebRoot head={<WebNewPostHead {...props}/>}>
 			<h2 id="title" className="page-header">
 				<T k="new_post.post_to" values={{ user: props.name }} />
 			</h2>

@@ -7,9 +7,11 @@ export type NewCommunityViewProps = {
 };
 
 export function WebNewCommunityView(_props: NewCommunityViewProps): ReactNode {
+	const title = `Juxt - New Community`;
+	
 	const head = (
 		<>
-			<title>Juxt - New Community</title>
+			<title>{title}</title>
 		</>
 	);
 

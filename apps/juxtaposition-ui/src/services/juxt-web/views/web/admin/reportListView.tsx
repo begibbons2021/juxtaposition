@@ -1,6 +1,6 @@
 import { WebRoot, WebWrapper } from '@/services/juxt-web/views/web/root';
 import { WebNavBar } from '@/services/juxt-web/views/web/navbar';
-import { WebModerationTabs } from '@/services/juxt-web/views/web/admin/admin';
+import { WebModerationHead, WebModerationTabs } from '@/services/juxt-web/views/web/admin/admin';
 import { WebPostView } from '@/services/juxt-web/views/web/post';
 import { humanDate, humanFromNow } from '@/util';
 import { WebMiiIcon } from '@/services/juxt-web/views/web/components/ui/WebMiiIcon';
@@ -60,7 +60,7 @@ function Report(props: ReportProps): ReactNode {
 
 export function WebReportListView(props: ReportListViewProps): ReactNode {
 	return (
-		<WebRoot type="admin">
+		<WebRoot head={<WebModerationHead selected="reports"/>} type="admin">
 			<h2 id="title" className="page-header">
 				User Reports (
 				{props.reports.length}

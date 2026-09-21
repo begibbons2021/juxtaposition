@@ -12,12 +12,10 @@ export type EditCommunityViewProps = {
 export function WebEditCommunityView(props: EditCommunityViewProps): ReactNode {
 	const url = useUrl();
 	const community = props.community;
+	const title = `Juxt - ${community.name}`;
 	const head = (
 		<>
-			<title>
-				Juxt -
-				{community.name}
-			</title>
+			<title>{title}</title>
 		</>
 	);
 

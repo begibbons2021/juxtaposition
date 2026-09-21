@@ -33,9 +33,42 @@ export function WebCommunityItem(props: CommunityItemProps): ReactNode {
 	);
 }
 
+export function WebCommunityListHead(): ReactNode {
+	const url = "https://juxt.pretendo.network/titles/all";
+	const name = T.str("all_communities.text");
+	const title = `Juxt - ${name}`;
+	const image = "https://pretendo.network/assets/images/opengraph/opengraph-image.png"
+	
+	return (
+		<>
+			<title>{title}</title>
+
+			{/* TODO: Do we want the "All Communities" list to appear in SEO or site graphs? */}
+			{/* Google / Search Engine Tags */}
+			<meta itemProp="name" content={title}/>
+			<meta itemProp="image" content={image}/>
+
+			{/* Open Graph Meta Tags */}
+			<meta property="og:title" content={title}/>
+			<meta property="og:url" content={url}/>
+			<meta property="og:image" content={image}/>
+			<meta property="og:site_name" content="Juxtaposition"/>
+
+			{/* Twitter Meta Tags */}
+			<meta name="twitter:url" content={url}/>
+			<meta name="twitter:card" content="summary_large_image"/>
+			<meta name="twitter:title" content={title}/>
+			<meta name="twitter:site" content="@PretendoNetwork"/>
+			<meta name="twitter:image" content={image}/>
+			<meta name="twitter:creator" content="@PretendoNetwork"/>
+
+		</>
+	);
+}
+
 export function WebCommunityListView(props: CommunityListViewProps): ReactNode {
 	return (
-		<WebRoot>
+		<WebRoot head={<WebCommunityListHead />}>
 			<h2 id="title" className="page-header">
 				<T k="all_communities.text" />
 			</h2>
@@ -53,9 +86,26 @@ export function WebCommunityListView(props: CommunityListViewProps): ReactNode {
 	);
 }
 
+
+export function WebCommunityOverviewHead(): ReactNode {
+	const url = "https://juxt.pretendo.network/titles";
+	const name = T.str("global.communities");
+	const title = `Juxt - ${name}`;
+	const image = "https://pretendo.network/assets/images/opengraph/opengraph-image.png"
+	
+	return (
+		<>
+			<title>{title}</title>
+
+			{/* TODO: Do we want the "Communities" list to appear in SEO or site graphs? */}
+			
+		</>
+	);
+}
+
 export function WebCommunityOverviewView(props: CommunityOverviewViewProps): ReactNode {
 	return (
-		<WebRoot>
+		<WebRoot head={<WebCommunityOverviewHead />}>
 			<h2 id="title" className="page-header">
 				<T k="global.communities" />
 			</h2>
