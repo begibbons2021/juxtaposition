@@ -12,15 +12,10 @@ export type EditCommunityViewProps = {
 export function WebEditCommunityView(props: EditCommunityViewProps): ReactNode {
 	const url = useUrl();
 	const community = props.community;
-	const title = `Juxt - ${community.name}`;
-	const head = (
-		<>
-			<title>{title}</title>
-		</>
-	);
+	const pageTitle = `Edit ${community.name}`;
 
 	return (
-		<WebRoot type="admin" head={head}>
+		<WebRoot pageTitle={pageTitle} type="admin">
 			<h2 id="title" className="page-header">
 				Edit Community
 			</h2>

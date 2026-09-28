@@ -13,23 +13,14 @@ export type FeedTabsProps = {
 	selected: number;
 };
 
-export function WebFeedHead(props : FeedTabsProps): ReactNode {
-	var name: string;
-
-	switch (props.selected) {
-		case 0: name = T.str("global.my_feed"); break;
-		case 1: name = T.str("global.people_feed"); break;
-		case 2: name = T.str("global.global_feed"); break;
-		default: name = T.str("global.activity_feed"); break;
+function feedPageTitle(selected: number): string {
+	switch (selected) {
+		case 0: return T.str("global.my_feed");
+		case 1: return T.str("global.people_feed");
+		case 2: return T.str("global.global_feed");
+		default: return T.str("global.activity_feed"); 
 	}
 
-	const title = `Juxt - ${name}`;
-	
-	return (
-		<>
-			<title>{title}</title>
-		</>
-	);
 }
 
 export function WebFeedTabs(props: FeedTabsProps): ReactNode {
@@ -68,25 +59,9 @@ export function WebFeedTabs(props: FeedTabsProps): ReactNode {
 	);
 }
 
-// export function WebFeedViewWrapper(tabProps: FeedTabsProps, viewProps: FeedViewProps) {
-// 	return (
-// 		<WebRoot head={ <WebFeedHead {...tabProps} />}>
-// 			{/* Use the selected tab to fill the view with the appropriate page */}
-// 			{((tabProps, viewProps) => 
-// 				{ switch (tabProps.selected) {
-// 						case 1: return <WebPeopleFeedView {...viewProps}/>;
-// 						case 2: return <WebGlobalFeedView {...viewProps}/>;
-// 						default: return <WebPersonalFeedView {...viewProps}/>;
-// 					}
-// 				})(tabProps, viewProps)
-// 			}
-// 		</WebRoot>
-// 	);
-// }
-
 export function WebPersonalFeedView(props: FeedViewProps): ReactNode {
 	return (
-		<WebRoot head={<WebFeedHead selected={0}/>}>
+		<WebRoot pageTitle={feedPageTitle(0)}>
 			<h2 id="title" className="page-header">
 				<T k="global.activity_feed" />
 			</h2>
@@ -103,7 +78,7 @@ export function WebPersonalFeedView(props: FeedViewProps): ReactNode {
 
 export function WebPeopleFeedView(props: FeedViewProps): ReactNode {
 	return (
-		<WebRoot head={<WebFeedHead selected={1}/>}>
+		<WebRoot pageTitle={feedPageTitle(1)}>
 			<h2 id="title" className="page-header">
 				<T k="global.activity_feed" />
 			</h2>
@@ -120,7 +95,7 @@ export function WebPeopleFeedView(props: FeedViewProps): ReactNode {
 
 export function WebGlobalFeedView(props: FeedViewProps): ReactNode {
 	return (
-		<WebRoot head={<WebFeedHead selected={2}/>}>
+		<WebRoot pageTitle={feedPageTitle(2)}>
 			<h2 id="title" className="page-header">
 				<T k="global.activity_feed" />
 			</h2>

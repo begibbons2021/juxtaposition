@@ -1,9 +1,15 @@
 import cx from 'classnames';
 import type { ReactNode } from 'react';
 
-export function DefaultHead(): ReactNode {
+export type DefaultHeadProps = {
+	pageTitle?: string;
+}
+
+export function DefaultHead(props: DefaultHeadProps): ReactNode {
 	return (
 		<>
+			<title>{`Juxt ${props.pageTitle ? `- ${props.pageTitle}` : ``}`}</title>
+
 			<meta charSet="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<link rel="manifest" href="/manifest.json" />
@@ -44,6 +50,7 @@ export type HtmlProps = {
 	children?: ReactNode;
 	head?: ReactNode;
 
+	pageTitle?: string;
 	type?: DefaultStylingType; // default "normal"
 };
 
@@ -53,7 +60,7 @@ export function WebRoot(props: HtmlProps): ReactNode {
 	return (
 		<html lang="en">
 			<head>
-				<DefaultHead />
+				<DefaultHead pageTitle={props.pageTitle}/>
 				<DefaultStyling type={stylingType} />
 				{props.head}
 			</head>

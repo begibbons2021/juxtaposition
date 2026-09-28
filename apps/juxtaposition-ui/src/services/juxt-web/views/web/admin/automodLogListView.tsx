@@ -1,6 +1,6 @@
 import { WebRoot, WebWrapper } from '@/services/juxt-web/views/web/root';
 import { WebNavBar } from '@/services/juxt-web/views/web/navbar';
-import { WebAdminCenterItems, WebModerationHead, WebModerationTabs } from '@/services/juxt-web/views/web/admin/admin';
+import { WebAdminCenterItems, webModerationTitle, WebModerationTabs } from '@/services/juxt-web/views/web/admin/admin';
 import { useUrl } from '@/services/juxt-web/views/common/hooks/useUrl';
 import { WebMiiIcon } from '@/services/juxt-web/views/web/components/ui/WebMiiIcon';
 import { humanDate, humanFromNow } from '@/util';
@@ -96,7 +96,7 @@ export function WebAutomodLogListView(props: AutomodLogListViewProps): ReactNode
 	const nextUrl = url.url('/admin/automod', { page: props.page + 1 });
 
 	return (
-		<WebRoot head={<WebModerationHead selected="automod"/>} type="admin">
+		<WebRoot pageTitle={webModerationTitle("automod")} type="admin">
 			<h2 id="title" className="page-header">
 				Automod (
 				{props.total}

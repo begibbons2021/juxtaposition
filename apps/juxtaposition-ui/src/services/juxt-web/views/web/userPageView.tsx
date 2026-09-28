@@ -128,12 +128,12 @@ export function WebUserPageMeta(props: { profile: UserProfile; withImage?: boole
 	const url = useUrl();
 	const profile = props.profile;
 	const pnidName = props.profile.miiName;
+	// Unfortunately, this has to be kept for now because this page sets some of its own page meta pertaining to user content
+	// Alternatively, perhaps we could grab the current page title from the DOM somehow?
 	const pageTitle = `Juxt - ${pnidName}`;
 	const pageImage = url.cdn(`/mii/${profile.pid}/smile_open_mouth.png`);
 	return (
 		<>
-			<title>{pageTitle}</title>
-
 			{/* Google / Search Engine Tags */}
 			<meta itemProp="name" content={pageTitle} />
 			{profile.profileInfo.comment ? <meta itemProp="description" content={profile.profileInfo.comment} /> : null}
@@ -162,13 +162,14 @@ export function WebUserPageView(props: UserPageViewProps): ReactNode {
 	const user = useUser();
 	const profile = props.profile;
 	const isSelf = user.pid === props.profile.pid;
+	const pageTitle = props.profile.miiName;
 
 	const isRequesterFollowingUser = props.requestUserContent?.followed_users.includes(profile.pid) ?? false;
 
 	const head: ReactNode = <WebUserPageMeta profile={props.profile} />;
 
 	return (
-		<WebRoot head={head}>
+		<WebRoot pageTitle={pageTitle} head={head}>
 			<h2 id="title" className="page-header"><T k="global.user_page" /></h2>
 			<WebNavBar selection={isSelf ? 0 : -1} />
 			<div id="toast"></div>

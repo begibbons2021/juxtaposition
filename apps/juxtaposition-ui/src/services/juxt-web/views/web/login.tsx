@@ -45,10 +45,12 @@ export function LoginHead(): ReactNode {
 }
 
 export function WebLoginRoot(props: HtmlProps): ReactNode {
+	const pageTitle = props.pageTitle;
+
 	return (
 		<html lang="en">
 			<head>
-				<DefaultHead />
+				<DefaultHead pageTitle={pageTitle}/>
 				<LoginHead />
 				{props.head}
 			</head>

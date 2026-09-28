@@ -9,10 +9,10 @@ export type LoginViewProps = {
 };
 
 export function WebLoginView(props: LoginViewProps): ReactNode {
-	const extraHead = <title>{T.str('login.title')}</title>;
+	const pageTitle = T.str('login.title');
 
 	return (
-		<WebLoginRoot head={extraHead}>
+		<WebLoginRoot pageTitle={pageTitle}>
 			<div id="toast" data-show={props.toast ? 'true' : undefined}>
 				{props.toast}
 			</div>

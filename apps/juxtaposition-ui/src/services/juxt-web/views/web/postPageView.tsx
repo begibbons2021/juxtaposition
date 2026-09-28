@@ -23,11 +23,10 @@ export type PostPageViewProps = {
 function PostHead(props: PostPageViewProps): ReactNode {
 	const url = useUrl();
 	const post = props.post;
-	const pageTitle = `Juxt - ${T.str('post.title', { username: post.author.miiName })}`;
 
 	if (post.moderation?.removed) {
 		return (
-			<title>{pageTitle}</title>
+			<></>
 		);
 	}
 
@@ -43,8 +42,6 @@ function PostHead(props: PostPageViewProps): ReactNode {
 
 	return (
 		<>
-			<title>{pageTitle}</title>
-
 			{/* Google / Search Engine Tags */}
 			<meta itemProp="name" content={title} />
 			<meta itemProp="description" content={description} />
@@ -72,8 +69,11 @@ function PostHead(props: PostPageViewProps): ReactNode {
 export function WebPostPageView(props: PostPageViewProps): ReactNode {
 	const user = useUser();
 
+	const post = props.post;
+	const pageTitle = T.str('post.title', { username: post.author.miiName });
+
 	return (
-		<WebRoot head={<PostHead {...props} />}>
+		<WebRoot pageTitle={pageTitle} head={<PostHead {...props} />}>
 			<h2 id="title" className="page-header"><T k="post.heading" /></h2>
 			<WebNavBar selection={2} />
 			<div id="toast"></div>

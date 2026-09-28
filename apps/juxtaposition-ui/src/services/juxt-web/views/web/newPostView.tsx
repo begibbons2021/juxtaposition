@@ -60,16 +60,6 @@ export type NewPostViewProps = {
 	errorText?: string;
 };
 
-export function WebNewPostHead(props: NewPostViewProps): ReactNode {
-	const title = `Juxt - ${T.str('new_post.post_to', { user: props.name })}`;
-
-	return (
-		<>
-			<title>{title}</title>
-		</>
-	);
-}
-
 export function WebNewPostView(props: NewPostViewProps): ReactNode {
 	const url = useUrl();
 	const user = useUser();
@@ -126,6 +116,7 @@ export function WebNewPostView(props: NewPostViewProps): ReactNode {
 
 export function WebNewPostPage(props: NewPostViewProps): ReactNode {
 	const user = useUser();
+	const pageTitle = T.str('new_post.post_to', { user: props.name });
 
 	let content = <WebNewPostView {... props} />;
 	if (!user.perms.moderator) {
@@ -137,7 +128,7 @@ export function WebNewPostPage(props: NewPostViewProps): ReactNode {
 	}
 
 	return (
-		<WebRoot head={<WebNewPostHead {...props}/>}>
+		<WebRoot pageTitle={pageTitle}>
 			<h2 id="title" className="page-header">
 				<T k="new_post.post_to" values={{ user: props.name }} />
 			</h2>

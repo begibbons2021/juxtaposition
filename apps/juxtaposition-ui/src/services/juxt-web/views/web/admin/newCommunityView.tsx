@@ -7,16 +7,12 @@ export type NewCommunityViewProps = {
 };
 
 export function WebNewCommunityView(_props: NewCommunityViewProps): ReactNode {
-	const title = `Juxt - New Community`;
-	
-	const head = (
-		<>
-			<title>{title}</title>
-		</>
-	);
+
+	/* TODO: Create template string with this page's name?  */
+	const pageTitle = "New Community"
 
 	return (
-		<WebRoot type="admin" head={head}>
+		<WebRoot pageTitle={pageTitle} type="admin">
 			<h2 id="title" className="page-header">
 				New Community
 			</h2>

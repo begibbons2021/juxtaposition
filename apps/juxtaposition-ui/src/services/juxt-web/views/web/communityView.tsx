@@ -24,6 +24,8 @@ export type CommunityViewProps = {
 
 export function WebCommunityHead(props: CommunityViewProps): ReactNode {
 	const name = props.community.name;
+    // Unfortunately, this has to be kept for now because this page sets some of its own page meta pertaining to user content
+	// Alternatively, perhaps we could grab the current page title from the DOM somehow?
 	const title = `Juxt - ${name}`;
 	const description = props.community.description;
 	const image = props.community.iconImagePaths['128'];
@@ -31,7 +33,6 @@ export function WebCommunityHead(props: CommunityViewProps): ReactNode {
 
 	return (
 		<>
-			<title>{title}</title>
 			{/* Google / Search Engine Tags */}
 			<meta itemProp="name" content={title} />
 			<meta itemProp="description" content={description} />
@@ -59,10 +60,12 @@ export function WebCommunityView(props: CommunityViewProps): ReactNode {
 	const url = useUrl();
 	const user = useUser();
 	const community = props.community;
+	const pageTitle =  community.name;
+
 	const bannerUrl = url.cdn(community.wupHeaderImagePath);
 
 	return (
-		<WebRoot head={<WebCommunityHead {...props} />}>
+		<WebRoot pageTitle={pageTitle} head={<WebCommunityHead {...props} />}>
 			<h2 id="title" className="page-header">
 				<T k="global.communities" />
 			</h2>

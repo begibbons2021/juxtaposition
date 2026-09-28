@@ -41,8 +41,6 @@ export function WebCommunityListHead(): ReactNode {
 	
 	return (
 		<>
-			<title>{title}</title>
-
 			{/* TODO: Do we want the "All Communities" list to appear in SEO or site graphs? */}
 			{/* Google / Search Engine Tags */}
 			<meta itemProp="name" content={title}/>
@@ -67,8 +65,10 @@ export function WebCommunityListHead(): ReactNode {
 }
 
 export function WebCommunityListView(props: CommunityListViewProps): ReactNode {
+	const pageTitle = T.str("all_communities.text");
+
 	return (
-		<WebRoot head={<WebCommunityListHead />}>
+		<WebRoot pageTitle={pageTitle} head={<WebCommunityListHead />}>
 			<h2 id="title" className="page-header">
 				<T k="all_communities.text" />
 			</h2>
@@ -87,25 +87,15 @@ export function WebCommunityListView(props: CommunityListViewProps): ReactNode {
 }
 
 
-export function WebCommunityOverviewHead(): ReactNode {
-	const url = "https://juxt.pretendo.network/titles";
-	const name = T.str("global.communities");
-	const title = `Juxt - ${name}`;
-	const image = "https://pretendo.network/assets/images/opengraph/opengraph-image.png"
-	
-	return (
-		<>
-			<title>{title}</title>
-
-			{/* TODO: Do we want the "Communities" list to appear in SEO or site graphs? */}
-			
-		</>
-	);
-}
-
 export function WebCommunityOverviewView(props: CommunityOverviewViewProps): ReactNode {
+	/* 
+		TODO: Do we want the "Communities" list to appear in SEO or site graphs? 
+		If so, we need to add meta fields to the head.
+	*/	
+	const pageTitle = T.str("global.communities");
+
 	return (
-		<WebRoot head={<WebCommunityOverviewHead />}>
+		<WebRoot pageTitle={pageTitle}>
 			<h2 id="title" className="page-header">
 				<T k="global.communities" />
 			</h2>

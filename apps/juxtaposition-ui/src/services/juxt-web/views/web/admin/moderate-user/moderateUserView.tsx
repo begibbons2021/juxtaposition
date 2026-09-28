@@ -36,6 +36,7 @@ export function WebModerateUserView(props: ModerateUserViewProps): ReactNode {
 	const url = useUrl();
 	const profile = props.profile;
 	const pnidName = profile.miiName;
+	const pageTitle = `Moderate ${pnidName}`
 	const head = (
 		<>
 			<WebUserPageMeta profile={props.profile} withImage />
@@ -43,7 +44,7 @@ export function WebModerateUserView(props: ModerateUserViewProps): ReactNode {
 	);
 
 	return (
-		<WebRoot type="admin" head={head}>
+		<WebRoot pageTitle={pageTitle} type="admin" head={head}>
 			<h2 id="title" className="page-header">
 				Moderation profile
 			</h2>

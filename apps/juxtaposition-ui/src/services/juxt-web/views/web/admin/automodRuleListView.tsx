@@ -1,6 +1,6 @@
 import { WebRoot, WebWrapper } from '@/services/juxt-web/views/web/root';
 import { WebNavBar } from '@/services/juxt-web/views/web/navbar';
-import { WebAdminCenterItems, WebModerationHead, WebModerationTabs } from '@/services/juxt-web/views/web/admin/admin';
+import { WebAdminCenterItems, webModerationTitle, WebModerationTabs } from '@/services/juxt-web/views/web/admin/admin';
 import { useUrl } from '@/services/juxt-web/views/common/hooks/useUrl';
 import { WebAutomodRuleModeDropdown, WebAutomodRuleTypeDropdown } from '@/services/juxt-web/views/web/admin/automodRuleCreateView';
 import type { ReactNode } from 'react';
@@ -93,7 +93,7 @@ export function WebAutomodRuleListView(props: AutomodRuleListViewProps): ReactNo
 	const nextUrl = url.url('/admin/automod/rules', { page: props.page + 1 });
 
 	return (
-		<WebRoot head={<WebModerationHead selected="automod"/>} type="admin">
+		<WebRoot pageTitle={webModerationTitle("automod")} type="admin">
 			<h2 id="title" className="page-header">
 				Automod rules
 			</h2>

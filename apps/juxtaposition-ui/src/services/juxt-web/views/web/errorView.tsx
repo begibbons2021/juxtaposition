@@ -16,14 +16,10 @@ export type FatalErrorViewProps = {
 };
 
 export function WebErrorView(props: ErrorViewProps): ReactNode {
-	const title = `Juxt - ${T.str('error.title', { code: props.code })}`;
-	
-	const extraHead = (
-		<title>{title}</title>
-	);
+	const pageTitle = T.str('error.title', { code: props.code });
 
 	return (
-		<WebLoginRoot head={extraHead}>
+		<WebLoginRoot pageTitle={pageTitle}>
 			<div className="wrapper">
 				<div className="account-form-wrapper">
 					<a className="logotype" href="/">

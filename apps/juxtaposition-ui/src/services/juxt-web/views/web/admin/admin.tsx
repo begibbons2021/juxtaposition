@@ -6,25 +6,17 @@ export type ModerationTabsProps = {
 	selected: 'users' | 'reports' | 'automod' | 'communities';
 };
 
-export function WebModerationHead(props : ModerationTabsProps): ReactNode {
-	var name: string;
-
+export function webModerationTitle(selected: string): string {
 	/* TODO: Create template strings for moderation page names and tabs? */
-	switch (props.selected) {
-		case 'users': name = "User Accounts"; break;
-		case 'reports': name = "User Reports"; break;
-		case 'automod': name = "Automod"; break;
-		case 'communities': name = "Manage Communities"; break;
-		default: name = "Moderation"; break;
+
+	switch (selected) {
+		case 'users': return "User Accounts"; 
+		case 'reports': return "User Reports";
+		case 'automod': return "Automod"; 
+		case 'communities': return "Manage Communities";
+		default: return "Moderation"; 
 	}
 
-	const title = `Juxt - Admin - ${name}`;
-	
-	return (
-		<>
-			<title>{title}</title>
-		</>
-	);
 }
 
 export function WebAdminCenterItems(props: { children?: ReactNode }): ReactNode {
