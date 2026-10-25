@@ -7,6 +7,7 @@ import { initNavTabs } from '@/js/components/ui/PortalNavTabs';
 import { initSearchForm } from '@/js/components/ui/PortalSearchForm';
 import { initNavBar } from '@/js/components/PortalNavBar';
 import { back, exit } from '@/js/nav';
+import { initBoss } from '@/js/boss';
 
 export var pjax;
 setInterval(checkForUpdates, 30000);
@@ -63,6 +64,11 @@ export function initPosts() {
 	}
 	for (var i = 0; i < els.length; i++) {
 		els[i].addEventListener('click', function (e) {
+			// Prevent click event from happening if click target was in a link
+			if (e.target.closest('a[data-pjax]')) {
+				return;
+			}
+
 			pjax.loadUrl(e.currentTarget.getAttribute('data-href'));
 		});
 	}
@@ -231,6 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		switches: { '#nav-menu': Pjax.switches.replaceNode, '.tab-body': Pjax.switches.replaceNode }
 	});
 	console.debug('Pjax initialized.', pjax);
+	initBoss();
 	initAll();
 	stopLoading();
 });
