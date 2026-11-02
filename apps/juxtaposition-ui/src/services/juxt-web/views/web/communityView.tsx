@@ -65,7 +65,7 @@ export function WebCommunityView(props: CommunityViewProps): ReactNode {
 	const bannerUrl = url.cdn(community.wupHeaderImagePath);
 
 	return (
-		<WebRoot pageTitle={pageTitle} head={<WebCommunityHead {...props} />}>
+		<WebRoot title={pageTitle} head={<WebCommunityHead {...props} />}>
 			<h2 id="title" className="page-header">
 				<T k="global.communities" />
 			</h2>

@@ -7,8 +7,6 @@ export type ModerationTabsProps = {
 };
 
 export function webModerationTitle(selected: string): string {
-	/* TODO: Create template strings for moderation page names and tabs? */
-
 	switch (selected) {
 		case 'users': return "User Accounts"; 
 		case 'reports': return "User Reports";

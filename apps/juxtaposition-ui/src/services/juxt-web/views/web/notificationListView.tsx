@@ -316,7 +316,7 @@ export function WebNotificationWrapperView(props: NotificationWrapperViewProps):
 	const pageTitle = T.str("global.notifications");
 
 	return (
-		<WebRoot pageTitle={pageTitle}>
+		<WebRoot title={pageTitle}>
 			<h2 id="title" className="page-header">
 				<T k="global.notifications" />
 			</h2>

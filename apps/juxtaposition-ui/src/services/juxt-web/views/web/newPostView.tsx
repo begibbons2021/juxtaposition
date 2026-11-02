@@ -128,7 +128,7 @@ export function WebNewPostPage(props: NewPostViewProps): ReactNode {
 	}
 
 	return (
-		<WebRoot pageTitle={pageTitle}>
+		<WebRoot title={pageTitle}>
 			<h2 id="title" className="page-header">
 				<T k="new_post.post_to" values={{ user: props.name }} />
 			</h2>

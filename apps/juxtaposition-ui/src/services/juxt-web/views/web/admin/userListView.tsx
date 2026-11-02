@@ -22,7 +22,7 @@ export function WebUserListView(props: UserListViewProps): ReactNode {
 	const nextUrl = url.url('/admin/accounts', { page: props.page + 1, search: props.search });
 
 	return (
-		<WebRoot pageTitle={webModerationTitle("users")} type="admin">
+		<WebRoot title={webModerationTitle("users")} type="admin">
 			<h2 id="title" className="page-header">
 				User Accounts
 			</h2>

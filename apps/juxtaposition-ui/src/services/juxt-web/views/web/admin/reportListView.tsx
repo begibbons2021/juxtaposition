@@ -60,7 +60,7 @@ function Report(props: ReportProps): ReactNode {
 
 export function WebReportListView(props: ReportListViewProps): ReactNode {
 	return (
-		<WebRoot pageTitle={webModerationTitle("reports")} type="admin">
+		<WebRoot title={webModerationTitle("reports")} type="admin">
 			<h2 id="title" className="page-header">
 				User Reports (
 				{props.reports.length}

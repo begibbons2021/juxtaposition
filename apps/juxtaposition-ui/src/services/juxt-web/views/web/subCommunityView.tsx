@@ -10,7 +10,7 @@ export function WebSubCommunityView(props: SubCommunityViewProps): ReactNode {
 	const pageTitle = T.str('community.related_to', { community: props.community.name });
 
 	return (
-		<WebRoot pageTitle={pageTitle}>
+		<WebRoot title={pageTitle}>
 			<h2 id="title" className="page-header">
 				<T k="community.related_to" values={{ community: props.community.name }} />
 			</h2>

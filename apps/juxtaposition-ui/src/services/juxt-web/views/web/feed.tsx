@@ -61,7 +61,7 @@ export function WebFeedTabs(props: FeedTabsProps): ReactNode {
 
 export function WebPersonalFeedView(props: FeedViewProps): ReactNode {
 	return (
-		<WebRoot pageTitle={feedPageTitle(0)}>
+		<WebRoot title={feedPageTitle(0)}>
 			<h2 id="title" className="page-header">
 				<T k="global.activity_feed" />
 			</h2>
@@ -78,7 +78,7 @@ export function WebPersonalFeedView(props: FeedViewProps): ReactNode {
 
 export function WebPeopleFeedView(props: FeedViewProps): ReactNode {
 	return (
-		<WebRoot pageTitle={feedPageTitle(1)}>
+		<WebRoot title={feedPageTitle(1)}>
 			<h2 id="title" className="page-header">
 				<T k="global.activity_feed" />
 			</h2>
@@ -95,7 +95,7 @@ export function WebPeopleFeedView(props: FeedViewProps): ReactNode {
 
 export function WebGlobalFeedView(props: FeedViewProps): ReactNode {
 	return (
-		<WebRoot pageTitle={feedPageTitle(2)}>
+		<WebRoot title={feedPageTitle(2)}>
 			<h2 id="title" className="page-header">
 				<T k="global.activity_feed" />
 			</h2>

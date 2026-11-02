@@ -44,7 +44,7 @@ export function WebModerateUserView(props: ModerateUserViewProps): ReactNode {
 	);
 
 	return (
-		<WebRoot pageTitle={pageTitle} type="admin" head={head}>
+		<WebRoot title={pageTitle} type="admin" head={head}>
 			<h2 id="title" className="page-header">
 				Moderation profile
 			</h2>

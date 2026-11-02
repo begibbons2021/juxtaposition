@@ -12,7 +12,7 @@ export function WebLoginView(props: LoginViewProps): ReactNode {
 	const pageTitle = T.str('login.title');
 
 	return (
-		<WebLoginRoot pageTitle={pageTitle}>
+		<WebLoginRoot title={pageTitle}>
 			<div id="toast" data-show={props.toast ? 'true' : undefined}>
 				{props.toast}
 			</div>

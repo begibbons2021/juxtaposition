@@ -19,7 +19,7 @@ export function WebErrorView(props: ErrorViewProps): ReactNode {
 	const pageTitle = T.str('error.title', { code: props.code });
 
 	return (
-		<WebLoginRoot pageTitle={pageTitle}>
+		<WebLoginRoot title={pageTitle}>
 			<div className="wrapper">
 				<div className="account-form-wrapper">
 					<a className="logotype" href="/">

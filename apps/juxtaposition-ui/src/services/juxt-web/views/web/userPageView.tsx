@@ -169,7 +169,7 @@ export function WebUserPageView(props: UserPageViewProps): ReactNode {
 	const head: ReactNode = <WebUserPageMeta profile={props.profile} />;
 
 	return (
-		<WebRoot pageTitle={pageTitle} head={head}>
+		<WebRoot title={pageTitle} head={head}>
 			<h2 id="title" className="page-header"><T k="global.user_page" /></h2>
 			<WebNavBar selection={isSelf ? 0 : -1} />
 			<div id="toast"></div>

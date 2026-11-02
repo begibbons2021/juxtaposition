@@ -20,7 +20,7 @@ export function WebManageCommunityView(props: ManageCommunityViewProps): ReactNo
 	const nextUrl = url.url('/admin/communities', { page: props.page + 1, search: props.search });
 
 	return (
-		<WebRoot pageTitle={webModerationTitle("communities")} type="admin">
+		<WebRoot title={webModerationTitle("communities")} type="admin">
 			<h2 id="title" className="page-header">
 				Manage Communities
 			</h2>

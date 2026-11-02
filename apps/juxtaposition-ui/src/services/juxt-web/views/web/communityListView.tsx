@@ -68,7 +68,7 @@ export function WebCommunityListView(props: CommunityListViewProps): ReactNode {
 	const pageTitle = T.str("all_communities.text");
 
 	return (
-		<WebRoot pageTitle={pageTitle} head={<WebCommunityListHead />}>
+		<WebRoot title={pageTitle} head={<WebCommunityListHead />}>
 			<h2 id="title" className="page-header">
 				<T k="all_communities.text" />
 			</h2>
@@ -95,7 +95,7 @@ export function WebCommunityOverviewView(props: CommunityOverviewViewProps): Rea
 	const pageTitle = T.str("global.communities");
 
 	return (
-		<WebRoot pageTitle={pageTitle}>
+		<WebRoot title={pageTitle}>
 			<h2 id="title" className="page-header">
 				<T k="global.communities" />
 			</h2>

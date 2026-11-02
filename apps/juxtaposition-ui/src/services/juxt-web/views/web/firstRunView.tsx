@@ -15,7 +15,7 @@ export function WebFirstRunView(_props: FirstRunViewProps): ReactNode {
 	const pageTitle = T.str('login.title');
 
 	return (
-		<WebLoginRoot pageTitle={pageTitle} head={extraHead}>
+		<WebLoginRoot title={pageTitle} head={extraHead}>
 			<div className="wrapper">
 				<div className="account-form-wrapper">
 					<h2><T k="login.no_account_setup" /></h2>

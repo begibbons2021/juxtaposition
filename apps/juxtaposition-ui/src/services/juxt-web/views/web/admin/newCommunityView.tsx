@@ -8,11 +8,10 @@ export type NewCommunityViewProps = {
 
 export function WebNewCommunityView(_props: NewCommunityViewProps): ReactNode {
 
-	/* TODO: Create template string with this page's name?  */
 	const pageTitle = "New Community"
 
 	return (
-		<WebRoot pageTitle={pageTitle} type="admin">
+		<WebRoot title={pageTitle} type="admin">
 			<h2 id="title" className="page-header">
 				New Community
 			</h2>

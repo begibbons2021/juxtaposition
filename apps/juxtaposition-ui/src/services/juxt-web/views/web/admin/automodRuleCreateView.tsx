@@ -27,11 +27,10 @@ export function WebAutomodRuleModeDropdown(props: DropdownProps): ReactNode {
 }
 
 export function WebAutomodRuleCreateView(): ReactNode {
-	/* TODO: Create template string with this page's name?  */
 	const pageTitle = "New Automod Rule";
 	
 	return (
-		<WebRoot pageTitle={pageTitle} type="admin">
+		<WebRoot title={pageTitle} type="admin">
 			<h2 id="title" className="page-header">
 				New automod rule
 			</h2>

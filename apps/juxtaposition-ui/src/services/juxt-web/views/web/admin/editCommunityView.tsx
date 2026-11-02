@@ -15,7 +15,7 @@ export function WebEditCommunityView(props: EditCommunityViewProps): ReactNode {
 	const pageTitle = `Edit ${community.name}`;
 
 	return (
-		<WebRoot pageTitle={pageTitle} type="admin">
+		<WebRoot title={pageTitle} type="admin">
 			<h2 id="title" className="page-header">
 				Edit Community
 			</h2>

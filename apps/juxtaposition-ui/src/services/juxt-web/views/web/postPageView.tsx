@@ -73,7 +73,7 @@ export function WebPostPageView(props: PostPageViewProps): ReactNode {
 	const pageTitle = T.str('post.title', { username: post.author.miiName });
 
 	return (
-		<WebRoot pageTitle={pageTitle} head={<PostHead {...props} />}>
+		<WebRoot title={pageTitle} head={<PostHead {...props} />}>
 			<h2 id="title" className="page-header"><T k="post.heading" /></h2>
 			<WebNavBar selection={2} />
 			<div id="toast"></div>

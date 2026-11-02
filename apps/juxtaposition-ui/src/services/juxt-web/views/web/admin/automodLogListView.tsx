@@ -96,7 +96,7 @@ export function WebAutomodLogListView(props: AutomodLogListViewProps): ReactNode
 	const nextUrl = url.url('/admin/automod', { page: props.page + 1 });
 
 	return (
-		<WebRoot pageTitle={webModerationTitle("automod")} type="admin">
+		<WebRoot title={webModerationTitle("automod")} type="admin">
 			<h2 id="title" className="page-header">
 				Automod (
 				{props.total}
